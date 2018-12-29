@@ -1,6 +1,7 @@
 import React from "react";
 import Todo from "./Todo.jsx";
 import AddTodo from "./AddTodo";
+import PropTypes from 'prop-types'
 
 const TodoList = props => {
   const state = props;
@@ -19,5 +20,9 @@ const TodoList = props => {
     </div>
   );
 };
+
+TodoList.propTypes = {
+    todos: PropTypes.arrayOf(PropTypes.object),
+}
 
 export default TodoList;
