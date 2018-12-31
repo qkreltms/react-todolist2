@@ -22,4 +22,4 @@ Todo.defaultProps = {
     })
 }
 
-export default Todo;
+export default Todo

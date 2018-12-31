@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types'
-
 class AddTodo extends Component {
     state= {
         content: ''
@@ -37,5 +36,5 @@ AddTodo.propTypes = {
 AddTodo.defaultTypes = {
     addTodo: () => console.warn('addTodo is not defined')
 }
- 
-export default AddTodo;
+
+export default AddTodo

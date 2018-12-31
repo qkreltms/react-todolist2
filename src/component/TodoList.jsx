@@ -3,12 +3,15 @@ import Todo from "./Todo.jsx";
 import AddTodo from "./AddTodo";
 import PropTypes from 'prop-types'
 
+import * as actions from '../actions/todo'
+import { connect } from 'react-redux'
+
 const TodoList = props => {
   const state = props;
 
   const todoList = state.todos.length ? (
     state.todos.map(todo => {
-      return <Todo deleteTodo={props.deleteTodo} todo={todo} key={todo.id} />;
+      return <Todo todo={todo} key={todo.id} deleteTodo={state.deleteTodo} />;
     })
   ) : (
     <h3> You have nothing to do. yay!</h3>
@@ -16,7 +19,7 @@ const TodoList = props => {
 
   return (
     <div>
-      {todoList} <AddTodo addTodo={props.addTodo} />
+      {todoList} <AddTodo addTodo={state.addTodo}/>
     </div>
   );
 };
@@ -33,4 +36,17 @@ TodoList.defaultProps = {
   addTodo: () => console.warn('addTodo is not defined')
 }
 
-export default TodoList;
+const mapStateToProps = (state) => ({
+  todos: state.todo.todos
+})
+
+const mapDispatchToProps = (dispatch) => ({
+  deleteTodo: (id) => {
+    dispatch(actions.deleteTodo(id))
+  },
+  addTodo: (todo) => {
+    dispatch(actions.addTodo(todo))
+  }
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(TodoList)
