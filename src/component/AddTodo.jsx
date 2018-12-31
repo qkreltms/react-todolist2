@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types'
 
 class AddTodo extends Component {
     state= {
@@ -27,6 +28,14 @@ class AddTodo extends Component {
             </form>
         );
     }
+}
+
+AddTodo.propTypes = {
+    addTodo: PropTypes.func
+}
+
+AddTodo.defaultTypes = {
+    addTodo: () => console.warn('addTodo is not defined')
 }
  
 export default AddTodo;

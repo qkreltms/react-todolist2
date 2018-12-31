@@ -9,7 +9,16 @@ const Todo = ({ todo, deleteTodo }) => {
 Todo.propTypes = {
     todo: PropTypes.shape({
         id: PropTypes.number,
-        todo: PropTypes.string
+        todo: PropTypes.string,
+        deleteTodo: PropTypes.func
+    })
+}
+
+Todo.defaultProps = {
+    todo: PropTypes.shape({
+        id: 0,
+        todo: '',
+        deleteTodo: () => console.warn('deleteTodo is not defined')
     })
 }
 

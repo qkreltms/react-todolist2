@@ -23,6 +23,14 @@ const TodoList = props => {
 
 TodoList.propTypes = {
     todos: PropTypes.arrayOf(PropTypes.object),
+    deleteTodo: PropTypes.func,
+    addTodo: PropTypes.func
+}
+
+TodoList.defaultProps = {
+  todos: [],
+  deleteTodo: () => console.warn('deleteTodo is not defined'),
+  addTodo: () => console.warn('addTodo is not defined')
 }
 
 export default TodoList;
