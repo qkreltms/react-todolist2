@@ -3,6 +3,7 @@ DONE
 
 > 1. prop-types 적용
 > 2. redux적용
+> 3. gitflow 적용
 
 TODO
 ----
