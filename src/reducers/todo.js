@@ -15,7 +15,6 @@ export default function todo(state = initialState, action) {
         {
             const newTodos = [...state.todos, action.todo]
             return {
-                ...state, //왜 state 반환??
                 todos: newTodos
             }
         }
@@ -26,7 +25,6 @@ export default function todo(state = initialState, action) {
             })
 
             return {
-                ...state,
                 todos: newTodos
             }
         }

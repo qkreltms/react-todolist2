@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types'
+import { FormattedMessage } from 'react-intl'
 class AddTodo extends Component {
     state= {
         content: ''
@@ -22,7 +23,7 @@ class AddTodo extends Component {
     render() {
         return (
             <form onSubmit={this.handleOnSubmit}>
-                <label> Add Todo Here </label>
+                <label> <FormattedMessage id='add-todo-here' /> </label>
                 <input type="text" onChange={this.setContent} value={this.state.content}></input>
             </form>
         );
