@@ -5,8 +5,9 @@ import { Switch, BrowserRouter, Route } from 'react-router-dom'
 import NavBar from './component/header/NavBar.jsx'
 import About from './component/About.jsx'
 import { connect } from 'react-redux'
-import * as actions from './actions/locale'
+import PropTypes from 'prop-types'
 
+import * as actions from './actions/locale'
 import locale from './i18n/plugin'
 import en from 'react-intl/locale-data/en'
 import ko from 'react-intl/locale-data/ko'
@@ -37,6 +38,14 @@ class App extends Component {
       </IntlProvider>
     );
   }
+}
+
+App.propTypes = {
+  setLocale: PropTypes.func
+}
+
+TodoList.defaultProps = {
+setLocale: () => console.warn('setLocale is not defined'),
 }
 
 const mapStateToProps = (state) => {

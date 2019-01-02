@@ -1,5 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom'
+import PropTypes from 'prop-types'
 
 const NavBar = ({setLocale}) => {
     return ( 
@@ -27,6 +28,14 @@ const NavBar = ({setLocale}) => {
             </ul>
         </div>
      );
+}
+
+NavBar.propTypes = {
+    setLocale: PropTypes.func
+}
+
+NavBar.defaultProps = {
+    setLocale: () => { console.warn('setLocale is not defined') }
 }
 
 export default NavBar
