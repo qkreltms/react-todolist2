@@ -3,7 +3,7 @@ DONE
 > 1. prop-types 적용
 > 2. redux적용
 > 3. 라우터, intl적용해 한글, 영어 바꿀 수 있게
-> 4. meterialize CSS 적용
+> 4. material-ui, scss 적용
 > 5. scss 적용
 DOING
 ---
