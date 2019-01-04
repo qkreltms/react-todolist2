@@ -1,12 +1,11 @@
 import React, { Component } from 'react';
-import './App.css';
+import './css/main.css';
 import TodoList from './component/TodoList.jsx'
 import { Switch, BrowserRouter, Route } from 'react-router-dom'
 import NavBar from './component/header/NavBar.jsx'
 import About from './component/About.jsx'
 import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
-
 import * as actions from './actions/locale'
 import locale from './i18n/plugin'
 import en from 'react-intl/locale-data/en'
@@ -15,6 +14,7 @@ import { IntlProvider, addLocaleData } from 'react-intl'
 
 addLocaleData([...en, ...ko])
 class App extends Component {
+
   componentDidUpdate() {
     localStorage.setItem('lang', this.props.lang)
   }

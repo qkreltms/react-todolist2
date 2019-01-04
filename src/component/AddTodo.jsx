@@ -1,8 +1,26 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types'
 import { FormattedMessage } from 'react-intl'
+import Paper from '@material-ui/core/Paper';
+import InputBase from '@material-ui/core/InputBase';
+import { withStyles } from '@material-ui/core/styles';
+
+const styles = (theme) => ({
+    root: {
+      padding: '2px 4px',
+      display: 'flex',
+      alignItems: 'center',
+      width: 400,
+      margin: 'auto',
+    },
+    input: {
+      marginLeft: 8,
+      flex: 1,
+    }
+})
+
 class AddTodo extends Component {
-    state= {
+    state = {
         content: ''
     }
 
@@ -21,21 +39,35 @@ class AddTodo extends Component {
     }
     
     render() {
+        const { classes } = this.props
         return (
             <form onSubmit={this.handleOnSubmit}>
-                <label> <FormattedMessage id='add-todo-here' /> </label>
-                <input type="text" onChange={this.setContent} value={this.state.content}></input>
+                <Paper elevation={1} className={classes.root}>
+                    <FormattedMessage id='add-todo-here'>
+                        {msg => (
+                            <InputBase 
+                            className={classes.input}
+                            placeholder={msg}
+                            type='text' 
+                            onChange={this.setContent} 
+                            value={this.state.content}
+                            />                    
+                        )}
+                    </FormattedMessage>
+                </Paper>
             </form>
         );
     }
 }
 
 AddTodo.propTypes = {
-    addTodo: PropTypes.func
+    addTodo: PropTypes.func,
+    classes: PropTypes.object.isRequired
 }
 
 AddTodo.defaultTypes = {
-    addTodo: () => console.warn('addTodo is not defined')
+    addTodo: () => console.warn('addTodo is not defined'),
+    classes: () => console.warn('classes is not defined')
 }
 
-export default AddTodo
+export default withStyles(styles)(AddTodo)
