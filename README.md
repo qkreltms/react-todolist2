@@ -5,6 +5,7 @@ DONE
 > 3. 라우터, intl적용해 한글, 영어 바꿀 수 있게
 > 4. material-ui, scss 적용
 > 5. scss 적용
+
 DOING
 ---
 > 1. gitflow 적용
