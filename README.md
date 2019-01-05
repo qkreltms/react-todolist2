@@ -13,6 +13,7 @@ DOING
 TODO
 ----
 > 1. jest 적용
+> 0. thunk, saga 적용
 > 2. typescript 적용
 > 3. surge에 배포
 > 4. 총 정리(블로그 작성)
