@@ -2,29 +2,16 @@ import React from "react";
 import * as actions from "../actions/randomDogs";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
-
-const fetchDog = props => {
-  return async function(dispatch, getState) {
-    props.requestDog();
-    try {
-      const res = await fetch("https://dog.ceo/api/breeds/image/random");
-      const data = await res.json();
-      return props.requestDogSuccess(data);
-    } catch (err) {
-      return props.requestDogFailed(err);
-    }
-  };
-};
+import { FormattedMessage } from "react-intl";
 
 const RandomPicture = props => {
-    console.log(props.requestDog)
-    console.log(props.dispatch)
-
   return (
     <div>
-      <button onClick={() => fetchDog(props)}>Show Dog</button>
+      <button onClick={() => props.dispatch(actions.fetchDog())}>
+        <FormattedMessage id="show_dog" />
+      </button>
       {props.loading ? (
-        <p>Loading...</p>
+        <p><FormattedMessage id="loading" /></p>
       ) : props.error ? (
         <p>{props.errorMsg}</p>
       ) : (
@@ -41,9 +28,7 @@ RandomPicture.propTypes = {
   error: PropTypes.bool,
   errorMsg: PropTypes.string,
   loading: PropTypes.bool,
-  requestDog: PropTypes.func,
-  requestDogFailed: PropTypes.func,
-  requestDogSuccess: PropTypes.func
+  dispatch: PropTypes.func
 };
 
 RandomPicture.deafultProps = {
@@ -51,15 +36,7 @@ RandomPicture.deafultProps = {
   error: false,
   errorMsg: "",
   lading: false,
-  requestDog: () => {
-    console.warn("requestDog is not defined");
-  },
-  requestDogFailed: () => {
-    console.warn("requestDogFailed is not defined");
-  },
-  requestDogSuccess: () => {
-    console.warn("requestDogSuccess is not defined");
-  }
+  dispatch: null
 };
 
 const mapStateToProps = state => ({
@@ -69,20 +46,4 @@ const mapStateToProps = state => ({
   loading: state.randomDogs.loading
 });
 
-const mapDispatchToProps = dispatch => ({
-  requestDog: () => {
-    dispatch(actions.requestDog());
-  },
-  requestDogSuccess: data => {
-    dispatch(actions.requestDogSuccess(data));
-  },
-  requestDogFailed: err => {
-    dispatch(actions.requestDogFailed(err));
-  },
-  dispatch
-});
-
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(RandomPicture);
+export default connect(mapStateToProps)(RandomPicture);

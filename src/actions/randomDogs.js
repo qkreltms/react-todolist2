@@ -19,3 +19,16 @@ export const requestDogFailed = (err) => {
         errorMsg: err.message
     }
 }
+
+export const fetchDog = () => {
+    return function (dispatch) {
+        dispatch(requestDog())
+
+        fetch("https://dog.ceo/api/breeds/image/random")
+            .then(res => res.json())
+            .then(
+                data => dispatch(requestDogSuccess(data)),
+                err => dispatch(requestDogFailed(err))
+            )
+    }
+}

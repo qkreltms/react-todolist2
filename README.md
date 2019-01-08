@@ -5,16 +5,17 @@ DONE
 > 3. 라우터, intl적용해 한글, 영어 바꿀 수 있게
 > 4. material-ui, scss 적용
 > 5. scss 적용
+> 6. react-thunk 적용
 
 DOING
 ---
 > 1. gitflow 적용
-> 0. thunk, saga 적용
 
 TODO
 ----
 > 1. jest 적용
 > 2. typescript 적용
+> 0. react-saga 적용
 > 3. surge에 배포
 > 4. 총 정리(블로그 작성)
 >>2. redux-saga 어떻게 사이드 이펙트 제거하는지, async-await 적용해보기
