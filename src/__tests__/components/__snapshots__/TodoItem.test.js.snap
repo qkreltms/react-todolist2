@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TodoItem renders without crashing 1`] = `
+<TodoItem
+  classes={
+    Object {
+      "paper": "TodoItem-paper-1",
+    }
+  }
+  deleteTodo={[Function]}
+  todo={
+    Object {
+      "id": 0,
+      "msg": "",
+    }
+  }
+/>
+`;

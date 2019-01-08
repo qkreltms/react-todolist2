@@ -10,13 +10,14 @@ DONE
 DOING
 ---
 > 1. gitflow 적용
+> 2. jest 적용(reducer)
 
 TODO
 ----
-> 1. jest 적용
 > 2. typescript 적용
 > 0. react-saga 적용
 > 3. surge에 배포
+<br/>
 > 4. 총 정리(블로그 작성)
 >>2. redux-saga 어떻게 사이드 이펙트 제거하는지, async-await 적용해보기
 >>2. Generator 정리(cooperative multitasking), async-await (https://meetup.toast.com/posts/73)

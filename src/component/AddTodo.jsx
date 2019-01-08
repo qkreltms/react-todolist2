@@ -26,7 +26,11 @@ class AddTodo extends Component {
 
     handleOnSubmit = (e) => {
         e.preventDefault()
-        this.props.addTodo(this.state.content)
+        const newTodo = {
+            id: Math.random(),
+            msg: this.state.content
+        }
+        this.props.addTodo(newTodo)
         this.setState({
             content: '' 
         })

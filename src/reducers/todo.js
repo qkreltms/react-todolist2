@@ -4,8 +4,8 @@ import * as types from '../actions/types'
 
 const initialState = {
     todos: [
-        { id: 1, todo: 'todo1'},
-        { id: 2, todo: 'todo2'}
+        { id: 1, msg: 'todo1'},
+        { id: 2, msg: 'todo2'}
       ]
 }
 

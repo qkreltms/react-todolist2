@@ -4,10 +4,7 @@ import * as types from './types'
 export const addTodo = (todo) => {
     return {
         type: types.ADDTODO,
-        todo: {
-            id: Math.random(),
-            todo
-        }
+        todo
     }
 }
 

@@ -19,6 +19,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
+    "testCoverage": "react-scripts test --coverage",
+    "testUpdate": "react-scripts test -u",
     "eject": "react-scripts eject",
     "deploy": "surge --project build --domain https://keepclonetodolist99595.surge.sh"
   },
@@ -30,5 +32,13 @@
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ]
+  ],
+  "devDependencies": {
+    "enzyme": "^3.8.0",
+    "enzyme-adapter-react-16": "^1.7.1",
+    "enzyme-to-json": "^3.3.5",
+    "fetch-mock": "^7.3.0",
+    "jest": "^23.6.0",
+    "redux-mock-store": "^1.5.3"
+  }
 }

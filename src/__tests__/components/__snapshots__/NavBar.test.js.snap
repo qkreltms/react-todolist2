@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NavBar renders without crashing 1`] = `
+<NavBar
+  classes={
+    Object {
+      "cssRoot": "NavBar-cssRoot-1",
+      "grow": "NavBar-grow-3",
+      "menuButton": "NavBar-menuButton-4",
+      "root": "NavBar-root-2",
+    }
+  }
+  setLocale={[Function]}
+/>
+`;

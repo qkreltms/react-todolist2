@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AboutTobo renders without crashing 1`] = `
+<AddTodo
+  classes={
+    Object {
+      "input": "AddTodo-input-2",
+      "root": "AddTodo-root-1",
+    }
+  }
+/>
+`;
