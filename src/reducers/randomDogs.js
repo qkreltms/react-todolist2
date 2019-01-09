@@ -1,6 +1,6 @@
 import * as types from '../actions/types'
 
-const initialState = {
+export const initialState = {
     url: '',
     loading: false,
     error: false,

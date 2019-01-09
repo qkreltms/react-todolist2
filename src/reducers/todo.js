@@ -2,7 +2,7 @@ import * as types from '../actions/types'
 
 //액션이 발생하면 데이터가 이렇게 변할 것이다.
 
-const initialState = {
+export const initialState = {
     todos: [
         { id: 1, msg: 'todo1'},
         { id: 2, msg: 'todo2'}

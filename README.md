@@ -10,7 +10,7 @@ DONE
 DOING
 ---
 > 1. gitflow 적용
-> 2. jest 적용(reducer)
+> 2. jest 적용(actions, reducers, components)
 
 TODO
 ----

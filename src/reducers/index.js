@@ -3,11 +3,13 @@ import locale from './locale'
 import randomDogs from './randomDogs'
 import { combineReducers } from 'redux'
 
-const reducers = combineReducers({
+export const reducers = {
     todo,
     locale,
     randomDogs
-})
+}
 
-export default reducers
+const rootReducer = combineReducers(reducers)
+
+export default rootReducer
 
