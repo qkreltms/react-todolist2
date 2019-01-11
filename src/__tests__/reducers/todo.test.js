@@ -8,11 +8,11 @@ import {
 } from '../../actions/todo'
 
 describe('todo reducer', () => {
-    it('shold return the initial state', () => {
+    test('shold return the initial state', () => {
         expect(reducer(undefined, {})).toEqual(expectedInitialState)
     })
 
-    it(`should handle ${types.ADDTODO}`, () => {
+    test(`should handle ${types.ADDTODO}`, () => {
         const newTodo = {
             id: 3,
             msg: 'Wake up early.'
@@ -30,7 +30,7 @@ describe('todo reducer', () => {
         .toEqual(expectedAction)
     })
 
-    it(`should handle ${types.DELETETODO}`, () => {
+    test(`should handle ${types.DELETETODO}`, () => {
         const id = 1
         const todos = [{ id: 2, msg: 'todo2'}]
         const expectedAction = {

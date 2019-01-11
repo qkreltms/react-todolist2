@@ -6,15 +6,15 @@ DONE
 > 4. material-ui, scss 적용
 > 5. scss 적용
 > 6. react-thunk 적용
+> 7. jest 적용(actions, reducers)
 
 DOING
 ---
 > 1. gitflow 적용
-> 2. jest 적용(actions, reducers, components)
+> 2. typescript 적용
 
 TODO
 ----
-> 2. typescript 적용
 > 0. react-saga 적용
 > 3. surge에 배포
 <br/>

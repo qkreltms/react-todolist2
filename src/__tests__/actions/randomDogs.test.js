@@ -14,7 +14,7 @@ describe('randomDogs async action', () => {
     })
 
     //동작 성공 검토
-    it('requestDogSuccess is should work', () => {
+    test('requestDogSuccess is should work', () => {
         //actions.fetchDog()가 아래 url로 접근해서 지정된 데이터 가져옴
         fetchMock.getOnce('https://dog.ceo/api/breeds/image/random', {
             body: {
@@ -43,7 +43,7 @@ describe('randomDogs async action', () => {
     })
 
     //에러 발생 검토
-    it('requestDogSuccess is should fail', () => {
+    test('requestDogSuccess is should fail', () => {
         const fakeErrorMsg = 'fake error message'
         //actions.fetchDog()가 아래 url로 접근해서 지정된 에러 메세지 가져옴
         fetchMock.getOnce('https://dog.ceo/api/breeds/image/random', () => { throw new Error(fakeErrorMsg)})

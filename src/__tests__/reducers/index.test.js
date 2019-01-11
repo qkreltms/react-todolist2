@@ -1,15 +1,36 @@
-import * as types from '../../actions/types'
+import {
+    addTodo as action
+} from '../../actions/todo'
+import rootReducer from '../../reducers'
+import {
+    createStore,
+    applyMiddleware
+} from 'redux'
 import thunk from 'redux-thunk'
-import configureMockStore from 'redux-mock-store'
-import rootReducer, {reducers} from '../../reducers'
-
-const middlewares = [thunk]
-const mockStore = configureMockStore(middlewares)
 
 describe('rootReducer', () => {
-    it('rootReducer is should work', () => {
-        const store = mockStore(reducers)
+    test('should handle ', () => {
+        const store = createStore(rootReducer, applyMiddleware(thunk))
+        const newTodo = {
+            id: 1,
+            msg: 'Wake up early.'
+        }
 
-        expect(rootReducer).toEqual(reducers)
+        const expectedAction = {
+            "todos": [{
+                "id": 1,
+                "msg": "todo1"
+            }, {
+                "id": 2,
+                "msg": "todo2"
+            }, {
+                "id": 1,
+                "msg": "Wake up early."
+            }]
+        }
+        store.dispatch(action(newTodo))
+
+        const actual = store.getState()
+        expect(actual.todo).toEqual(expectedAction)
     })
 })

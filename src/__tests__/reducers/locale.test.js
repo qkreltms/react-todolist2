@@ -5,11 +5,11 @@ import {
 } from '../../actions/locale'
 
 describe('locale reducer', () => {
-    it('should return the initial state', () => {
+    test('should return the initial state', () => {
         expect(reducer(undefined, {})).toEqual(expectedInitialState)
     })
 
-    it(`should handle ${types.SETLOCALE}`, () => {
+    test(`should handle ${types.SETLOCALE}`, () => {
         const lang = 'en'
         const expectedAction = {
             lang
